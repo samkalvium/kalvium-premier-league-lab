@@ -121,7 +121,7 @@ function SortbyAge() {
 }
 
 //Progression 10 - Sort players beloging to _____ team in descending order of awards won
-function filterByTeamxSortbyNoOfAwards(tm) {
+function FilterByTeamxSortbyNoOfAwards(team) {
   let num = 0;
   let filteredPlayers = [];
   for (let i = 0; i < players.length; i++) {
@@ -142,7 +142,7 @@ function filterByTeamxSortbyNoOfAwards(tm) {
 }
 //Challenge 1 - Sort players that have won _______ award _____ times and belong to _______ country in alphabetical order of their names
 
-function check(a, b) {
+function compare(a, b) {
   let value = 0;
   if (a.name > b.name) {
     value = 1;
@@ -153,7 +153,7 @@ function check(a, b) {
 function SortByNamexAwardxTimes(awardName, noOfTimes, country) {
   var dataOne = filterByAwardxTimes(awardName, noOfTimes);
   var dataTwo = dataOne.filter(player => player.country == country);
-  return dataTwo.sort(check);
+  return dataTwo.sort(compare);
 }
 
 //Challenge 2 - Sort players that are older than _____ years in alphabetical order
